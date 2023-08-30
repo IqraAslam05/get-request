@@ -2,7 +2,6 @@ package main
 
 import (
 	"fmt"
-	
 )
 
 // func main() {
@@ -107,12 +106,10 @@ import (
 // }
 //------------------10th--------------------------//
 
-
-import
-"strings"
-               //Define your ASCII space characters here
+// Define your ASCII space characters here
 var asciiSpace = [256]byte{'\t': 1, '\n': 1, '\v': 1, '\f': 1, '\r': 1, ' ': 1}
-func TrimSpace(input string) string {
+
+func Trim(input string) string {
 	// Searching for the first non-ASCII non-space byte
 	startingPos := 0
 	for ; startingPos < len(input); startingPos++ {
@@ -134,9 +131,9 @@ func TrimSpace(input string) string {
 	return input[startingPos:endingPos]
 }
 func main() {
-	input := 	"Hello,World"
-	   
-	result := strings.TrimSpace(input)
+	input := "           Hello,World                 "
+
+	result := Trim(input)
 	fmt.Printf("Original: '%s'\nTrimmed: '%s'\n", input, result)
 }
 
@@ -157,7 +154,6 @@ func main() {
 // a:="@qwertyui@"
 // fmt.Println(strings.Trim(a,"@"))
 //}
-
 
 // import
 // "strings"
